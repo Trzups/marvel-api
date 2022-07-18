@@ -13,7 +13,6 @@ export default new Vuex.Store({
           `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=${public_key}&hash=${hashValue}&limit=100&offset=0`
         )
         .then((result) => {
-          console.log(result);
           result.data.data.results.forEach((item) => {
             state.characters.push(item);
           });
